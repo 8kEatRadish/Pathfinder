@@ -39,6 +39,12 @@ dependencies:
   # shell
   process_run: ^0.13.1
 
+  # getx
+  get: ^4.6.1
+
+  # window util
+  bitsdojo_window: ^0.1.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
