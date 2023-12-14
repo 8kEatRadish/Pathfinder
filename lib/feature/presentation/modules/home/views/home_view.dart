@@ -1,9 +1,14 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pathfinder/app/modules/home/controllers/home_controller.dart';
+import 'package:pathfinder/feature/data/database/database.dart';
 import 'package:pathfinder/res/assets.dart';
 import 'package:pathfinder/res/dimens.dart';
+
+import '../../../../data/add_command_repository_impl.dart';
+import '../../../../domain/repository/adb_command_repository.dart';
+import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -100,6 +105,8 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    Get.put<AdbCommandRepository>(AddCommandRepositoryImpl(), permanent: true);
+
     return Scaffold(
         body: SafeArea(
             child: Column(

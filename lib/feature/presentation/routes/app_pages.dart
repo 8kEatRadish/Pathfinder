@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
-import 'package:pathfinder/app/modules/home/controllers/home_controller.dart';
-import 'package:pathfinder/app/modules/home/views/home_view.dart';
+
+import '../modules/home/controllers/home_controller.dart';
+import '../modules/home/views/home_view.dart';
+
 
 part 'app_routes.dart';
 

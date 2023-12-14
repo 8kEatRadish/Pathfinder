@@ -3,9 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pathfinder/res/messages.dart';
 import 'package:pathfinder/res/themes.dart';
-import 'package:pathfinder/app/routes/app_pages.dart';
 
-void main() {
+import 'core/utils/logger_utils.dart';
+import 'feature/data/dao/adb_command_info_dao.dart';
+import 'feature/data/database/database.dart';
+import 'feature/presentation/routes/app_pages.dart';
+
+late AppDatabase database;
+late AdbCommandInfoDao adbCommandInfoDao;
+
+void main() async {
+  database = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
+  adbCommandInfoDao = database.adbCommandInfoDao;
+
   runApp(const MyApp());
   doWhenWindowReady(() {
     final win = appWindow;
@@ -23,6 +33,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    logger.i("app start");
     return GetMaterialApp(
       translations: Messages(),
       locale: const Locale('zh', 'CN'),
