@@ -1,16 +1,16 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:pathfinder/core/error/failure.dart';
 import 'package:pathfinder/core/usercase/user_case.dart';
 import 'package:pathfinder/feature/domain/repository/adb_command_repository.dart';
 
+import '../../../core/status/failure.dart';
 import '../entity/command_info.dart';
 
-class AddAllCommandToDatabase
+class AddAllCommandToDatabaseUserCase
     extends UseCase<List<int>, ParamsAddAllCommandToDatabase> {
   final AdbCommandRepository adbCommandRepository;
 
-  AddAllCommandToDatabase(this.adbCommandRepository);
+  AddAllCommandToDatabaseUserCase(this.adbCommandRepository);
 
   @override
   Future<Either<Failure, List<int>>> call(

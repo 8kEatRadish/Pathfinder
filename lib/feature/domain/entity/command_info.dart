@@ -5,6 +5,7 @@ class CommandInfo extends Equatable {
   final String name;
   final String commandValue;
 
+
   const CommandInfo(this.id, this.name, this.commandValue);
 
   @override

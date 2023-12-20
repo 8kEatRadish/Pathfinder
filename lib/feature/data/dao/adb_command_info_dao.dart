@@ -16,7 +16,7 @@ abstract class AdbCommandInfoDao {
   @insert
   Future<void> insertAdbCommandInfo(AdbCommandInfo adbCommandInfo);
 
-  @insert
+  @Insert(onConflict: OnConflictStrategy.replace)
   Future<List<int>> insertAdbCommandInfoList(
       List<AdbCommandInfo> adbCommandInfo);
 }

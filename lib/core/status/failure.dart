@@ -17,3 +17,11 @@ class TestFail extends Failure {
   @override
   List<Object?> get props => [errorMessage];
 }
+
+
+class CheckAdbFail extends Failure {
+  const CheckAdbFail(super.errorMessage);
+
+  @override
+  List<Object?> get props => [errorMessage];
+}

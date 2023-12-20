@@ -4,4 +4,5 @@ abstract class Dimens {
   static const double paddingCommonSize = 8;
   static const double controlWidgetWidth = 230;
   static const double choseDevicesHeight = 45;
+  static const double commonBorderRadius = 6;
 }

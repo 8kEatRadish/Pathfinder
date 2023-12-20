@@ -30,8 +30,8 @@ class Themes {
   TextTheme _textTheme() => const TextTheme(
         titleLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
         bodyMedium: TextStyle(
-            fontSize: 24, fontWeight: FontWeight.normal, color: Colors.white),
-        bodySmall: TextStyle(
             fontSize: 20, fontWeight: FontWeight.normal, color: Colors.white),
+        bodySmall: TextStyle(
+            fontSize: 15, fontWeight: FontWeight.normal, color: Colors.white),
       );
 }

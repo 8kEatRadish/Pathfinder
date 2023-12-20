@@ -1,11 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:get/get.dart';
-
-import 'package:pathfinder/core/error/failure.dart';
 import 'package:pathfinder/core/utils/logger_utils.dart';
 
 import 'package:pathfinder/feature/domain/entity/command_info.dart';
 
+import '../../core/status/failure.dart';
 import '../../main.dart';
 import '../domain/repository/adb_command_repository.dart';
 import 'entity/adb_command_information.dart';
@@ -38,6 +36,6 @@ class AddCommandRepositoryImpl extends AdbCommandRepository {
 
   List<String> _adbCommandInfoCoverToCommandValue(
       AdbCommandInfo adbCommandInfo) {
-    return adbCommandInfo.commandInfo.split('@');
+    return adbCommandInfo.commandInfo.split(' ');
   }
 }
