@@ -155,6 +155,6 @@ class _$AdbCommandInfoDao extends AdbCommandInfoDao {
   Future<List<int>> insertAdbCommandInfoList(
       List<AdbCommandInfo> adbCommandInfo) {
     return _adbCommandInfoInsertionAdapter.insertListAndReturnIds(
-        adbCommandInfo, OnConflictStrategy.abort);
+        adbCommandInfo, OnConflictStrategy.replace);
   }
 }

@@ -5,17 +5,9 @@ import 'package:pathfinder/res/messages.dart';
 import 'package:pathfinder/res/themes.dart';
 
 import 'core/utils/logger_utils.dart';
-import 'feature/data/dao/adb_command_info_dao.dart';
-import 'feature/data/database/database.dart';
 import 'feature/presentation/routes/app_pages.dart';
 
-late AppDatabase database;
-late AdbCommandInfoDao adbCommandInfoDao;
-
-void main() async {
-  database = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
-  adbCommandInfoDao = database.adbCommandInfoDao;
-
+void main(){
   runApp(const MyApp());
   doWhenWindowReady(() {
     final win = appWindow;

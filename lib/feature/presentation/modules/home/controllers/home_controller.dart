@@ -12,9 +12,6 @@ import 'package:pathfinder/feature/domain/usercase/exec_command_usercase.dart';
 import 'package:pathfinder/feature/domain/usercase/get_device_list_usercase.dart';
 import 'package:pathfinder/res/dimens.dart';
 
-import '../../../../data/add_command_repository_impl.dart';
-import '../../../../domain/repository/adb_command_repository.dart';
-
 class HomeController extends GetxController {
   var test = 'I am text view'.obs;
 
@@ -46,7 +43,7 @@ class HomeController extends GetxController {
     pageStatus.value = Loadings("开始依赖注入数据库");
     ExecutionUtils().addExecution(
         const ExecutionInfo(ExecutionType.start, "依赖注入数据库"), executionResult);
-    Get.put<AdbCommandRepository>(AddCommandRepositoryImpl(), permanent: true);
+    // Get.put<AdbCommandRepository>(AddCommandRepositoryImpl(), permanent: true);
     ExecutionUtils().addExecution(
         const ExecutionInfo(ExecutionType.end, "依赖注入数据库"), executionResult);
     // 注册shell

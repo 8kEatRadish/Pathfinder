@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:get/get.dart';
 import 'package:pathfinder/core/status/failure.dart';
 import 'package:pathfinder/core/usercase/user_case.dart';
 import 'package:pathfinder/core/utils/execution_utils.dart';
