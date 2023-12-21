@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:pathfinder/core/utils/execution_utils.dart';
 import 'package:pathfinder/core/utils/logger_utils.dart';
 import 'package:pathfinder/core/utils/shell_utils.dart';
-import 'package:pathfinder/feature/domain/entity/command_info.dart';
 import 'package:pathfinder/core/status/page_status.dart';
 import 'package:pathfinder/feature/domain/entity/device_info.dart';
 import 'package:pathfinder/feature/domain/entity/execution_info.dart';
@@ -19,11 +18,11 @@ import '../../../../domain/repository/adb_command_repository.dart';
 class HomeController extends GetxController {
   var test = 'I am text view'.obs;
 
-  List<DeviceInfo> devices = RxList([const DeviceInfo("ecb8d886", "", "")]);
+  List<DeviceInfo> devices = RxList();
 
   var pageStatus = Rx<PageStatus>(Normal(""));
 
-  var currentDevice = Rxn<DeviceInfo>(const DeviceInfo("ecb8d886", "", ""));
+  var currentDevice = Rxn<DeviceInfo>();
 
   List<ExecutionLogicInfo> commandInfoList = [
     SettingsCommand.startupSpeedCold,
@@ -76,7 +75,7 @@ class HomeController extends GetxController {
       result.fold((l) {
         pageStatus.value = Error("获取设备列表失败");
       }, (r) {
-        // devices.clear();
+        devices.clear();
         devices.addAll(r);
         pageStatus.value = Normal("获取设备列表成功");
       });
