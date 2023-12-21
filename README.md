@@ -5,16 +5,16 @@ A new Flutter project.
 
 ## Version
 
- Flutter (Channel stable, 3.13.4, on Microsoft Windows [版本 10.0.22621.2715], locale zh-CN)
- 
-    • Flutter version 3.13.4 on channel stable at D:\flutter\flutter
-    • Upstream repository https://github.com/flutter/flutter.git
-    • Framework revision 367f9ea16b (3 months ago), 2023-09-12 23:27:53 -0500
-    • Engine revision 9064459a8b
-    • Dart version 3.1.2
-    • DevTools version 2.25.0
-    • Pub download mirror https://pub.flutter-io.cn
-    • Flutter download mirror https://storage.flutter-io.cn
+[√] Flutter (Channel stable, 3.16.5, on Microsoft Windows [版本 10.0.22621.2861], locale zh-CN)
+[√] Windows Version (Installed version of Windows is version 10 or higher)
+[√] Android toolchain - develop for Android devices (Android SDK version 33.0.1)
+[√] Chrome - develop for the web
+[√] Visual Studio - develop Windows apps (Visual Studio Community 2022 17.7.4)
+[√] Android Studio (version 2022.3)
+[√] Android Studio (version 2020.3)
+[√] Connected device (3 available)
+[√] Network resources
+
 
 ## Getting Started
 
