@@ -71,10 +71,10 @@ abstract class SettingsCommand {
 
   static ExecutionLogicInfo frame = ExecutionLogicInfo(2, "帧数检测", [
     FrameAdbCommand(
-        ['shell','dumpsys', 'gfxinfo', 'com.konka.MultiScreen'], true),
+        ['shell','dumpsys', 'gfxinfo', 'com.tcl.settings'], true),
     CountDownCommand("距离采集结束还有 %d 秒，请移动设置焦点", 5),
     FrameAdbCommand(
-        ['shell','dumpsys', 'gfxinfo', 'com.konka.MultiScreen'
+        ['shell','dumpsys', 'gfxinfo', 'com.tcl.settings'
           // ,'|', 'grep', '-i', 'jank', '-C', '5'
         ], true),
     CalculationFrame("当前帧率为：")
