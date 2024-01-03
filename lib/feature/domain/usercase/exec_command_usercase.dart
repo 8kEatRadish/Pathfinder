@@ -11,7 +11,7 @@ import 'package:pathfinder/feature/domain/entity/execution_logic_info.dart';
 import '../../../core/status/failure.dart';
 import '../entity/settings_command.dart';
 
-class ExecCommandUserCase extends UseCase<NoParams, ParamsExecCommandUserCase> {
+class ExecCommandUserCase extends UserCase<NoParams, ParamsExecCommandUserCase> {
   ExecCommandUserCase();
 
   List<int> saveResult = [];

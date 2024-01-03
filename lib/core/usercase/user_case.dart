@@ -5,7 +5,7 @@ import '../status/failure.dart';
 
 
 
-abstract class UseCase<Type, Params> {
+abstract class UserCase<Type, Params> {
   Future<Either<Failure, Type>> call(Params params);
 }
 

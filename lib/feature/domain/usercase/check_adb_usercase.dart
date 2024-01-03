@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 import 'package:pathfinder/config/config.dart';
 import 'package:pathfinder/core/status/failure.dart';
 import 'package:pathfinder/core/status/success.dart';
@@ -9,8 +10,9 @@ import 'package:pathfinder/core/utils/shell_utils.dart';
 
 import '../entity/execution_info.dart';
 
+@Injectable(as: UserCase)
 class CheckAdbUserCase
-    extends UseCase<CheckAdbSuccess, ParamsCheckAdbUserCase> {
+    extends UserCase<CheckAdbSuccess, ParamsCheckAdbUserCase> {
   @override
   Future<Either<Failure, CheckAdbSuccess>> call(
       ParamsCheckAdbUserCase params) async {

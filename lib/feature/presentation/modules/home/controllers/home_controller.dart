@@ -10,6 +10,7 @@ import 'package:pathfinder/feature/domain/entity/settings_command.dart';
 import 'package:pathfinder/feature/domain/usercase/check_adb_usercase.dart';
 import 'package:pathfinder/feature/domain/usercase/exec_command_usercase.dart';
 import 'package:pathfinder/feature/domain/usercase/get_device_list_usercase.dart';
+import 'package:pathfinder/injection.dart';
 import 'package:pathfinder/res/dimens.dart';
 
 class HomeController extends GetxController {
@@ -50,8 +51,8 @@ class HomeController extends GetxController {
     shell = ShellUtils();
     // 获取adb路径
     pageStatus.value = Loadings("开始获取adb路径");
-    CheckAdbUserCase checkAdbUserCase = CheckAdbUserCase();
-    var checkAdbUserCaseResult = await checkAdbUserCase
+    var checkAdbUserCaseResult = await location
+        .get<CheckAdbUserCase>()
         .call(ParamsCheckAdbUserCase(shell, executionResult));
     checkAdbUserCaseResult.fold((l) {
       pageStatus.value = Error("获取adb路径失败");
@@ -66,8 +67,8 @@ class HomeController extends GetxController {
       pageStatus.value = Loadings("开始获取adb路径成功 ${r.successMessage}");
 
       pageStatus.value = Loadings("开始获取设备列表");
-      GetDeviceListUserCase getDeviceListUserCase = GetDeviceListUserCase();
-      var result = await getDeviceListUserCase
+      var result = await location
+          .get<GetDeviceListUserCase>()
           .call(ParamsGetDeviceListUserCase(shell, executionResult));
       result.fold((l) {
         pageStatus.value = Error("获取设备列表失败");
@@ -81,13 +82,12 @@ class HomeController extends GetxController {
 
   void onClickCommandItem(ExecutionLogicInfo commandInfo) {
     logger.d("onClickCommandItem commandInfo $commandInfo");
-    ExecCommandUserCase execCommandUserCase = ExecCommandUserCase();
     if (currentDevice.value == null) {
       ExecutionUtils().addExecution(
           const ExecutionInfo(ExecutionType.error, "未连接设备"), executionResult);
       return;
     }
-    execCommandUserCase.call(ParamsExecCommandUserCase(
+    location.get<ExecCommandUserCase>().call(ParamsExecCommandUserCase(
         currentDevice.value!, commandInfo, executionResult, shell));
   }
 

@@ -1,6 +1,7 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pathfinder/injection.dart';
 import 'package:pathfinder/res/messages.dart';
 import 'package:pathfinder/res/themes.dart';
 
@@ -8,6 +9,7 @@ import 'core/utils/logger_utils.dart';
 import 'feature/presentation/routes/app_pages.dart';
 
 void main(){
+  configureDependencies();
   runApp(const MyApp());
   doWhenWindowReady(() {
     final win = appWindow;
